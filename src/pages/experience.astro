@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+
+const title = 'Jack O\'Connor'
+const link = '/'
+const link_text = `${String.fromCodePoint(0x02190)}Home`
+const link_on_right = false
+---
+
+<Layout title={'Jack\'s Experience'} description={'Placeholder text'}>
+    <main>
+        <Header title={title} link={link} link_text={link_text} link_on_right={link_on_right} />
+    </main>
+</Layout>

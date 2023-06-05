@@ -1,0 +1,36 @@
+---
+import github_mark from '../images/github-mark.svg'
+import linkedin_mark from '../images/linkedin-mark.svg'
+---
+<div class='container'>
+    <section id='intro'>
+        <p>Hi there,</p> 
+        <h1>I'm Jack</h1>
+        <p>Software Engineer, BSc Data Science and Analytics</p>
+        <div class='logo-container'>
+            <img src={github_mark} class='mark' />
+            <img src={linkedin_mark} class='mark' />
+        </div>
+    </section>
+</div>
+
+<style>
+    #intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+         
+        height: 100%;
+        text-align: center;
+    }
+
+    .logo-container {
+        margin: 18px 0;
+    }
+
+    .mark {
+        height: 36px;
+        width: 36px;
+        margin: 0 12px;
+    }
+</style>

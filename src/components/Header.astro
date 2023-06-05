@@ -1,0 +1,71 @@
+---
+export interface Props {
+    title: string,
+    link: string;
+    link_text: string;
+    link_on_right: boolean;
+}
+
+const {
+    title,
+    link,
+    link_text,
+    link_on_right
+} = Astro.props;
+---
+<header>
+    <nav class='container' style=`flex-direction: ${link_on_right ? 'row' : 'row-reverse'}`>
+        <div class= `header-item ${link_on_right ? 'header-item-left' : 'header-item-right'}`>
+           <span id='current-page'>{title}</span>
+        </div> 
+        <div class=`header-item ${link_on_right ? 'header-item-right' : 'header-item-left'}`>
+            <a id='change-page-link' href={link}>{link_text}</a>
+        </div>
+    </nav>
+</header>
+
+<style>
+    header {
+        position: sticky;
+        top: 0;
+
+        background-color: #323232;
+        border-bottom: thick solid;
+        border-bottom-color: #00897b; 
+    }
+
+    nav {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+   }
+
+    .header-item {
+        flex-grow: 1; 
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .header-item-left {
+        text-align: left;
+    }
+
+    .header-item-right {
+        text-align: right;
+    }
+
+    #current-page {
+        font-family: cursive;
+        font-weight: bold;
+        font-size: 2rem;
+        color: #00897b;
+    }
+
+    #change-page-link {
+        font-size: 1.5rem;
+        color: #dddddd;
+        # text-decoration: underline;
+    }
+</style>
+
