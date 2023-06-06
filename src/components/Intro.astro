@@ -6,10 +6,19 @@ import linkedin_mark from '../images/linkedin-mark.svg'
     <section id='intro'>
         <p>Hi there,</p> 
         <h1>I'm Jack</h1>
-        <p>Software Engineer, BSc Data Science and Analytics</p>
+        <p class='headline'>Software Engineer, BSc Data Science and Analytics</p>
         <div class='logo-container'>
-            <img src={github_mark} class='mark' />
-            <img src={linkedin_mark} class='mark' />
+            <a class='image-link' href='https://github.com/jackoconnordev'>
+                <img src={github_mark} class='mark' />
+            </a>
+            <a class='image-link' href='https://ie.linkedin.com/in/jackaoconnor'>
+                <img src={linkedin_mark} class='mark' />
+            </a>
+        </div>
+        <div id='experience-button-bg'>
+            <a id='experience-button' class='medium-text' href='/experience'>
+                {`Experience ${String.fromCodePoint(0x02192)}`}
+            </a>
         </div>
     </section>
 </div>
@@ -24,13 +33,45 @@ import linkedin_mark from '../images/linkedin-mark.svg'
         text-align: center;
     }
 
+    #intro h1 {
+        font-size: 2.4rem;
+        margin: 0.6rem 0;
+    }
+
+    .headline {
+        font-size: 1.2rem;
+    }
+
+    .medium-text {
+        font-size: 1.2rem;
+    }
+
     .logo-container {
         margin: 18px 0;
+    }
+
+    .image-link {
+        text-decoration: none;
     }
 
     .mark {
         height: 36px;
         width: 36px;
         margin: 0 12px;
+    }
+
+    #experience-button-bg {
+        margin: 1.2rem 0;
+    }
+
+    #experience-button {
+        padding: 0.8rem;
+        color: #dddddd;
+        border-radius: 0.6rem;
+        background-color: #00897b;
+
+        font-size: 1.6rem;
+        font-weight: bold;
+        text-decoration: none;
     }
 </style>
