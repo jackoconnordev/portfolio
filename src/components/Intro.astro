@@ -2,7 +2,7 @@
 import github_mark from '../images/github-mark.svg'
 import linkedin_mark from '../images/linkedin-mark.svg'
 ---
-<div class='container'>
+<div class='landing-height'>
     <section id='intro'>
         <p>Hi there,</p> 
         <h1>I'm Jack</h1>
@@ -24,6 +24,10 @@ import linkedin_mark from '../images/linkedin-mark.svg'
 </div>
 
 <style>
+    .landing-height {
+        height: calc(100svh - 3.2rem - 6px); 
+    }
+
     #intro {
         display: flex;
         flex-direction: column;

@@ -7,24 +7,18 @@ import Intro from '../components/Intro.astro'
 
 const title = 'Jack O\'Connor'
 const link = '/experience'
-const link_text = `Experience ${String.fromCodePoint(0x02192)}`
+const link_text = `Résumé ${String.fromCodePoint(0x02192)}`
 const link_on_right = true
 ---
 
 <Layout title={'Jack\'s Portfolio'} description={'Placeholder text'}>
-    <main>
-        <div class='fill-screen'>
-            <Header title={title} link={link} link_text={link_text} link_on_right={link_on_right} />
-            <Intro />
-        </div>
-        <Footer />
+    <Header title={title} link={link} link_text={link_text} link_on_right={link_on_right} />
+    <main class='container'>
+        <Intro />
     </main>
+    <Footer />
 </Layout>
 
 <style>
-    .fill-screen {
-        display: flex;
-        flex-direction: column;
-        height: 100svh;
-    }
+    
 </style>

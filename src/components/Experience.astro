@@ -1,0 +1,61 @@
+---
+type Skills = {
+    skills: string[][];
+}
+
+export interface Props {
+    company: string;
+    company_logo: string;
+    role: string;
+    dates: string;
+    all_skills: Skills;
+    children: any[];
+}
+
+const {
+    company,
+    company_logo,
+    role,
+    dates,
+    all_skills
+} = Astro.props;
+---
+<div class='experience'>
+    <div class='experience-side-panel'>
+        <img src={company_logo} />
+    </div>
+    <div class='experience-head'>
+        <h3>{company}</h3>
+        <span>Total time at company</span>
+    </div>
+    <slot />
+</div>
+
+<style>
+h3 {
+    margin: 0;
+}
+
+img {
+    height: 4rem;
+    border: 1px solid grey;
+    border-radius: 20%;
+}
+
+.experience {
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-template-rows: max-content auto;
+}
+
+.experience-side-panel {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.experience-head {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    padding: 0 1.5rem 0 1.5rem;
+}
+</style>
