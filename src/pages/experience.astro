@@ -2,9 +2,10 @@
 import Layout from '../layouts/Layout.astro'
 import Header from '../components/Header.astro'
 import Experience from '../components/Experience.astro'
+import ExperienceEntry from '../components/ExperienceEntry.astro'
 
 import ibm_logo from '../images/ibm-logo.webp'
-import ExperienceEntry from '../components/ExperienceEntry.astro'
+import ucc_logo from '../images/ucc-logo.svg'
 
 const title = 'Jack O\'Connor'
 const link = '/'
@@ -16,7 +17,7 @@ const company = 'IBM'
 const company_logo = ibm_logo
 const role = 'Software engineer'
 const dates = '2020 - 2021'
-const all_skills = {category: 'Test', skills: [['Skill 1', 'Skill 2']]}
+const skills = ['Skill 1', 'Skill 2']
 ---
 
 <Layout title={'Résumé'} description={'Placeholder text'}>
@@ -25,15 +26,35 @@ const all_skills = {category: 'Test', skills: [['Skill 1', 'Skill 2']]}
        <main>    
             <h1>Résumé</h1>
             <h2>Experience</h2>
-            <Experience company={company} company_logo={company_logo} role={role} dates={dates} all_skills={all_skills}>
-                <ExperienceEntry>
-                    <p>Bullet point 1</p>
-                    <p>Bullet point 2</p>
-                    <p>Bullet point 3</p>
+            <Experience company={company} company_logo={company_logo} total_time={dates}>
+                <ExperienceEntry role={role} dates={dates} skills={skills}
+                    entry_number={1}>
+                    <ul>
+                        <li>Bullet point 1</li>
+                        <li>Bullet point 2</li>
+                        <li>Bullet point 3</li>
+                    </ul>
+                </ExperienceEntry>
+                <ExperienceEntry role={role} dates={dates} skills={skills}
+                    entry_number={2}>
+                    <ul>
+                        <li>Bullet point 1</li>
+                        <li>Bullet point 2</li>
+                        <li>Bullet point 3</li>
+                    </ul>
                 </ExperienceEntry>
             </Experience>
             <h2>Education</h2>
-            <Experience />
+            <Experience company={'UCC'} company_logo={ucc_logo} 
+                        total_time={'2019-2023'}>
+                <ExperienceEntry role={'Data Science'} dates={dates} skills={skills}>
+                    <ul>
+                        <li>Bullet point 1</li>
+                        <li>Bullet point 2</li>
+                        <li>Bullet point 3</li>
+                    </ul>
+                </ExperienceEntry>
+            </Experience>
             <h2>Certifications</h2>
             <Experience />
         </main>
@@ -44,9 +65,18 @@ const all_skills = {category: 'Test', skills: [['Skill 1', 'Skill 2']]}
 main {
     margin: auto;
     max-width: 800px;
-    }
+}
 
 h1 {
     text-align: center;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 1rem;
 }
 </style>

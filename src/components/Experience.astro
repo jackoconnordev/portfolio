@@ -1,23 +1,14 @@
 ---
-type Skills = {
-    skills: string[][];
-}
-
 export interface Props {
     company: string;
     company_logo: string;
-    role: string;
-    dates: string;
-    all_skills: Skills;
-    children: any[];
+    total_time: string;
 }
 
 const {
     company,
     company_logo,
-    role,
-    dates,
-    all_skills
+    total_time,
 } = Astro.props;
 ---
 <div class='experience'>
@@ -26,7 +17,7 @@ const {
     </div>
     <div class='experience-head'>
         <h3>{company}</h3>
-        <span>Total time at company</span>
+        <span>{total_time}</span>
     </div>
     <slot />
 </div>
@@ -46,6 +37,7 @@ img {
     display: grid;
     grid-template-columns: max-content auto;
     grid-template-rows: max-content auto;
+    row-gap: 1rem;
 }
 
 .experience-side-panel {
@@ -56,6 +48,6 @@ img {
 .experience-head {
     grid-column-start: 2;
     grid-row-start: 1;
-    padding: 0 1.5rem 0 1.5rem;
+    padding-left: 1.5rem;
 }
 </style>

@@ -1,13 +1,64 @@
 ---
+export interface Props {
+    role: string;
+    dates: string;
+    skills: string[];
+    entry_number: number;
+}
+
+const {
+    role,
+    dates,
+    skills,
+    entry_number
+} = Astro.props
 ---
-<div class='experience-entry'>
-    <slot />
+{ /* Inline style since jsx doesn't compile in the style's tag at bottom.
+* Can increment the row for each new entry. +1 since company is first row.
+*/}
+<div style={`grid-row-start: ${entry_number+1}`}
+    <div class='experience-entry-timeline'}>
+        <div class='timeline-circle' />
+        <div class='timeline-line' />
+    </div> 
+    <div class='experience-entry-content' style={`grid-row-start: ${entry_number+1}`}>
+        <h4>{role}</h4>
+        <span>{dates}</span>
+        <slot />
+        {skills.map(skill => (
+            <span>{skill}</span>
+        ))}
+    </div>
 </div>
  
 <style>
-.experience-entry {
+.experience-entry-content {
     grid-column-start: 2;
-    grid-row-start: 2;
-    padding: 0 1.5rem 0 1.5rem;
+    padding-left: 1.5rem;
 }
+
+.experience-entry-timeline {
+    grid-column-start: 1;
+}
+
+.timeline-circle {
+    margin: 0.3rem 0 0 auto;
+    height: 0.7rem;
+    width: 0.7rem;
+
+    background-color: #00897b;
+    border-radius: 50%;
+}
+
+.timeline-line {
+    margin-top: 1rem;
+    margin-right: 0.35rem;
+    border-right: 1px solid #00897b;
+    height: calc(100% - 2rem);
+}
+
+h4 {
+    margin: 0;
+}
+
 </style>
