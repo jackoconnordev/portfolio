@@ -1,0 +1,61 @@
+---
+export interface Props {
+    company: string;
+    company_logo: string;
+    total_time: string;
+}
+
+const {
+    company,
+    company_logo,
+    total_time,
+} = Astro.props;
+---
+<div class='experience'>
+    <div class='experience-side-panel'>
+        <img src={company_logo} />
+    </div>
+    <div class='experience-head'>
+        <h3>{company}</h3>
+        <span class='total-time'>{total_time}</span>
+    </div>
+    <slot />
+</div>
+
+<style>
+h3 {
+    margin: 0;
+}
+
+img {
+    height: 4rem;
+    border: 2px solid silver;
+    border-radius: 20%;
+}
+
+.experience {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: min-content auto;
+    row-gap: 1rem;
+    margin-bottom: 3rem;
+
+}
+
+.experience-side-panel {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.experience-head {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    padding-left: 1.5rem;
+}
+
+.total-time {
+    display: block;
+    font-size: 0.875rem;
+    font-style: oblique;
+}
+</style>

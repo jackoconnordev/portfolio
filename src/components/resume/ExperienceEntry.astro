@@ -1,14 +1,14 @@
 ---
 export interface Props {
     role: string;
-    dates: string;
+    total_time: string;
     skills: string[];
     entry_number: number;
 }
 
 const {
     role,
-    dates,
+    total_time,
     skills,
     entry_number
 } = Astro.props
@@ -23,7 +23,7 @@ const {
     </div> 
     <div class='experience-entry-content' style={`grid-row-start: ${entry_number+1}`}>
         <h4>{role}</h4>
-        <span>{dates}</span>
+        <span class='total-time'>{total_time}</span>
         <slot />
         {skills.map(skill => (
             <span>{skill}</span>
@@ -42,9 +42,9 @@ const {
 }
 
 .timeline-circle {
-    margin: 0.3rem 0 0 auto;
-    height: 0.7rem;
-    width: 0.7rem;
+    margin: 0.2rem auto 0 auto;
+    height: 0.8rem;
+    width: 0.8rem;
 
     background-color: #00897b;
     border-radius: 50%;
@@ -52,13 +52,18 @@ const {
 
 .timeline-line {
     margin-top: 1rem;
-    margin-right: 0.35rem;
-    border-right: 1px solid #00897b;
-    height: calc(100% - 2rem);
+    margin-right: calc(50% - 1px);
+    border-right: 2px solid silver;
+    height: calc(100% - 1.75rem);
 }
 
 h4 {
     margin: 0;
 }
 
+.total-time {
+    display: block;
+    font-size: 0.875rem;
+    font-style: oblique;
+}
 </style>

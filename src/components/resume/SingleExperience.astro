@@ -1,11 +1,13 @@
 ---
 export interface Props {
+    role: string;
     company: string;
     company_logo: string;
     total_time: string;
 }
 
 const {
+    role,
     company,
     company_logo,
     total_time,
@@ -16,10 +18,13 @@ const {
         <img src={company_logo} />
     </div>
     <div class='experience-head'>
-        <h3>{company}</h3>
-        <span>{total_time}</span>
+        <h3>{role}</h3>
+        <span class='institution'>{company}</span>
+        <span class='total-time'>{total_time}</span>
     </div>
-    <slot />
+    <div class='experience-content'>
+        <slot />
+    </div>
 </div>
 
 <style>
@@ -29,15 +34,15 @@ h3 {
 
 img {
     height: 4rem;
-    border: 1px solid grey;
+    border: 2px solid silver;
     border-radius: 20%;
 }
 
 .experience {
     display: grid;
-    grid-template-columns: max-content auto;
-    grid-template-rows: max-content auto;
-    row-gap: 1rem;
+    grid-template-columns: min-content auto;
+    grid-template-rows: min-content auto;
+    margin-bottom: 3rem;
 }
 
 .experience-side-panel {
@@ -49,5 +54,23 @@ img {
     grid-column-start: 2;
     grid-row-start: 1;
     padding-left: 1.5rem;
+}
+
+.experience-content {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    padding-left: 1.5rem;
+}
+
+.institution {
+    display: block;
+    font-weight: bold;
+    color: #00897b;
+}
+
+.total-time {
+    display: block;
+    font-size: 0.875rem;
+    font-style: oblique;
 }
 </style>
