@@ -4,6 +4,10 @@ import Header from '../components/Header.astro'
 import SingleExperience from '../components/resume/SingleExperience.astro'
 import MultiExperience from '../components/resume/MultiExperience.astro'
 import ExperienceEntry from '../components/resume/ExperienceEntry.astro'
+import Certifications from '../components/resume/Certifications.astro'
+import Certificate from '../components/resume/Certificate.astro'
+
+import type {skill} from '../components/Skill.astro'
 
 const title = 'Jack O\'Connor'
 const link = '/'
@@ -15,13 +19,13 @@ import ibm_logo from '../images/ibm-logo.webp'
 const ibm = 'IBM'
 const ibm_dates = '2019-2021'
 
-const ibm_role_1 = 'Software engineer'
+const ibm_role_1 = 'Software Developer (Internship)'
 const ibm_role_1_dates = '2019 - 2020'
-const ibm_role_1_skills = ['Skill 1', 'Skill 2']
+const ibm_role_1_skills:skill[] = [['Cypress', 'Frontend end-to-end testing library']]
 
-const ibm_role_2 = 'Software engineer'
+const ibm_role_2 = 'Graduate Software Engineer'
 const ibm_role_2_dates = '2020 - 2021'
-const ibm_role_2_skills = ['Skill 1', 'Skill 2']
+const ibm_role_2_skills:skill[] = [['Skill 1', 'Skill 2']]
 
 // UCC text
 import ucc_logo from '../images/ucc-logo.svg'
@@ -74,7 +78,9 @@ const ucc_dates = '2019-2023'
                 </ul>
             </SingleExperience>
             <h2>Certifications</h2>
-            <SingleExperience />
+            <Certifications>
+                <Certificate />
+            </Certifications>
         </main>
     </div>
 </Layout>

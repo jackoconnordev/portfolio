@@ -1,0 +1,63 @@
+---
+export type skill = [string, string]
+
+export interface Props {
+    name: string;
+    description: string;
+}
+
+const {
+    name,
+    description
+} = Astro.props
+---
+<div class='skill'>
+    {name}
+    <span class='tooltip-text'>{description}</span>
+</div>
+
+<style>
+.skill {
+    positiion: relative;
+    display: inline-block;
+    font-size: 0.875rem;
+    margin-right: 1rem;
+    padding: 0.2rem 0.45rem;
+
+    border: 1px solid #00897b;
+    border-radius: 0.875rem;
+    background-color: #00897b22;
+    cursor: default;
+}
+
+.skill .tooltip-text {
+    visibility: hidden;
+    z-index: 1;
+    text-align: center;
+    position: absolute;
+    margin-left: -8rem;
+    margin-top: 2rem;
+    padding: 0.2rem 0.45rem;
+    
+    background-color: #00897b;
+    color: snow;
+    width: 14rem;
+    border-radius: 0.5rem;
+}
+
+.skill:hover .tooltip-text {
+    visibility: visible;
+}
+
+.tooltip-text::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+
+    border-bottom: 0.4rem solid #00897bee; 
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    top: -0.3rem;
+    left: calc(50% - 1rem);
+}
+</style>
