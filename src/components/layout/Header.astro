@@ -4,7 +4,7 @@ import Menu from './Menu.astro';
 <header>
     <div class='container'>
         <div class='header-item'>
-           <span id='title'>Jack O'Connor</span>
+           <a id='title' href='/'>Jack O'Connor</a>
         </div> 
         <Menu class='header-item'/>
     </div>
@@ -12,8 +12,9 @@ import Menu from './Menu.astro';
 
 <style>
     header {
-        position: sticky;
+        position: fixed;
         top: 0;
+        width: 100%;
 
         background-color: #323232;
         border-bottom: 5px solid;
@@ -23,8 +24,6 @@ import Menu from './Menu.astro';
     .container {
         display: flex;
         align-items: baseline;
-        padding-top: 0.6rem;
-        padding-bottom: 0.6rem;
     }
 
     .header-item {
@@ -38,6 +37,7 @@ import Menu from './Menu.astro';
         font-weight: bold;
         font-size: 2rem;
         color: #00897b;
+        text-decoration: none;
     }
 </style>
 
