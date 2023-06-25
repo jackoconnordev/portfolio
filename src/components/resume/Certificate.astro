@@ -1,0 +1,46 @@
+---
+export interface Props {
+    name: string;
+    logo: string;
+    issuer: string;
+    date: string;
+}
+
+const {
+    name,
+    logo,
+    issuer,
+    date
+} = Astro.props
+---
+<div class='certificate'>
+    <img src={logo} />
+    <div class='certificate-info'>
+        <span class='name'>{name}</span>
+        <span class='issuer'>{issuer}</span>
+        <span class='date'>{date}</span>
+    </div>
+</div>
+
+<style>
+img {
+    display: inline-block;
+    height: 60px;
+}
+
+.certificate-info {
+    display: inline-block;
+}
+
+.name {
+    display: block;
+}
+
+.issuer {
+    display: block;
+}
+
+.name {
+    display: block;
+}
+</style>

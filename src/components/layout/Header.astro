@@ -1,0 +1,43 @@
+---
+import Menu from './Menu.astro';
+---
+<header>
+    <div class='container'>
+        <div class='header-item'>
+           <span id='title'>Jack O'Connor</span>
+        </div> 
+        <Menu class='header-item'/>
+    </div>
+</header>
+
+<style>
+    header {
+        position: sticky;
+        top: 0;
+
+        background-color: #323232;
+        border-bottom: 5px solid;
+        border-bottom-color: #00897b; 
+    }
+
+    .container {
+        display: flex;
+        align-items: baseline;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+    }
+
+    .header-item {
+        flex-grow: 1;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+    }
+
+    #title {
+        font-family: cursive;
+        font-weight: bold;
+        font-size: 2rem;
+        color: #00897b;
+    }
+</style>
+

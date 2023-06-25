@@ -1,0 +1,132 @@
+<input id='menu-state' type='checkbox' aria-hidden='true' />
+<nav class='menu' role='navigation'>
+    <div class='burger-container'> 
+        <label class='burger-icon-label' for="menu-state">
+            <svg width="1.2rem" height="1.2rem">
+                <g class='burger-icon' stroke-width="2" stroke="currentColor">
+                    <line x1="0" y1="50%" x2="100%" y2="50%" 
+                        class='burger-crust burger-crust-top' />
+                    <line x1="0" y1="50%" x2="100%" y2="50%" 
+                        class='burger-patty' />
+                    <line x1="0" y1="50%" x2="100%" y2="50%" 
+                        class="burger-crust burger-crust-bottom" />
+                </g>
+            </svg>
+        </label>
+    </div>
+    <ul class='menu-items'>
+        <li>
+            <a href='/'>Home</a>
+        </li>
+        <li>
+            <a href='/resume'>Resume</a>
+        </li>
+        <li>
+            <a href='#blog'>Blog</a>
+        </li>
+    </ul>
+</nav>
+
+<style>
+#menu-state {
+    display: none;
+}
+
+.burger-container {
+    display: none;
+}
+
+.burger-icon-label {
+    cursor: pointer;
+}
+
+.burger-patty {
+    color: #00897b;
+}
+
+.burger-crust {
+    color: #00897b;
+    transition: all .3s cubic-bezier(.04,.04,.12,.96) .12s; 
+    transform-origin: center;
+    transform-box: view-box;
+}
+
+.burger-crust-top {
+    transform: translateY(-40%);
+}
+
+.burger-crust-bottom {
+    transform: translateY(40%);
+}
+
+.menu {
+    text-align: right;
+}
+
+#menu-state:checked ~ nav .burger-crust-top {
+    transform: rotate(45deg);
+}
+
+#menu-state:checked ~ nav .burger-crust-bottom {
+    transform: rotate(-45deg);
+}
+
+#menu-state:checked ~ nav .burger-patty {
+    opacity: 0;
+    transition: opacity .12s ease-out;
+}
+
+.menu-items {
+    width: auto;
+    text-align: right;
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+.menu-items li {
+    font-size: 1.2rem;
+    display: inline;
+    margin: 0 0.5rem;
+}
+
+.menu-items a {
+    color: snow;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 40rem) {
+    .burger-container {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0.5rem;
+        right: 1rem;
+
+        background-color: #323232;
+        border: 3px solid #00897b;
+        border-radius: 0.5rem;
+        padding: 0.3rem;
+    }
+
+    .menu-items {
+        display: none;
+        margin: 0;
+    }
+
+    .menu-items li {
+        margin: 0.5rem;
+    }
+
+    .menu-items li a {
+        width: 100%;
+    }
+
+    #menu-state:checked ~ nav .menu-items {
+        display: flex;
+        flex-direction: column;
+    }
+}
+</style>

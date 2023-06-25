@@ -1,9 +1,13 @@
 ---
+import type {skill} from '../Skill.astro'
+import Skill from '../Skill.astro'
+
 export interface Props {
     role: string;
     company: string;
     company_logo: string;
     total_time: string;
+    skills: skill[];
 }
 
 const {
@@ -11,6 +15,7 @@ const {
     company,
     company_logo,
     total_time,
+    skills
 } = Astro.props;
 ---
 <div class='experience'>
@@ -24,6 +29,9 @@ const {
     </div>
     <div class='experience-content'>
         <slot />
+        {skills.map(skill => (
+            <Skill name={skill[0]} description={skill[1]} />
+        ))}
     </div>
 </div>
 

@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro'
+import SingleExperience from '../components/resume/SingleExperience.astro'
+import MultiExperience from '../components/resume/MultiExperience.astro'
+import ExperienceEntry from '../components/resume/ExperienceEntry.astro'
+import Certifications from '../components/resume/Certifications.astro'
+import Certificate from '../components/resume/Certificate.astro'
+
+import type {skill} from '../components/Skill.astro'
+
+// IBM text
+import ibm_logo from '../images/ibm-logo.webp'
+const ibm = 'IBM'
+const ibm_dates = '2019-2021'
+
+const ibm_role_1 = 'Software Developer (Internship)'
+const ibm_role_1_dates = 'March 2022 - August 2022'
+const ibm_role_1_skills:skill[] = [['Cypress', 'Frontend end-to-end testing library.'],
+                                   ['React', 'Front-end UI framework based on component driven development.']]
+
+const ibm_role_2 = 'Graduate Software Engineer'
+const ibm_role_2_dates = '2020 - 2021'
+const ibm_role_2_skills:skill[] = [['Skill 1', 'Skill 2']]
+
+// UCC text
+import ucc_logo from '../images/ucc-logo.svg'
+const ucc_role_1 = 'Laboratory Demonstrator'
+const ucc_role_1_dates = 'September 2021 - April 2023'
+const ucc_role_1_skills:skill[] = [['Python', 'Scripting language'],
+                                   ['Data Structures', 'Linked lists, binary search trees, heaps, etc.']]
+
+const ucc_education = 'BSc (Hons) Data Science and Analytics'
+const ucc = 'University College Cork'
+const ucc_dates = '2019-2023'
+---
+
+<Layout title={'Résumé'} description={'Placeholder text'}>
+    <main class='container'>    
+        <h1>Résumé</h1>
+        <h2>Experience</h2>
+        <MultiExperience company={ibm} company_logo={ibm_logo} total_time={ibm_dates}>
+            <ExperienceEntry role={ibm_role_2} total_time={ibm_role_2_dates} skills={ibm_role_2_skills}
+                entry_number={1}>
+                <ul>
+                    <li>Bullet point 1</li>
+                    <li>Bullet point 2</li>
+                    <li>Bullet point 3</li>
+                </ul>
+            </ExperienceEntry>
+            <ExperienceEntry role={ibm_role_1} total_time={ibm_role_1_dates} skills={ibm_role_1_skills}
+                entry_number={2}>
+                <ul>
+                    <li>
+                        Developing the core UI application for the microservice-based security platform
+                        IBM Cloud Pak for Security.
+                    </li>
+                    <li>
+                        Overhauled Cypress testing suite which had become desynchronised with the main
+                        development branch.
+                    </li>
+                    <li>
+                        Configured Jenkins testing pipelines in accordance with a platform-wide centralised
+                        testing scheme.
+                    </li>
+                    <li>
+                        Created new UI components using React while implementing conditional rendering for existing
+                        UI components based on user privileges and app deployment configurations.
+                    </li>
+                </ul>
+            </ExperienceEntry>
+        </MultiExperience>
+
+        <SingleExperience role={ucc_role_1} company={ucc} company_logo={ucc_logo}
+            total_time={ucc_role_1_dates} skills={ucc_role_1_skills}>
+            <ul>
+                <li>
+                    Weekly lab demonstrator over two years for 100+ Data Science and Computer Science students.
+                </li>
+                <li>
+                    <span class='bold'>Intermediate Programming:</span> Taught the principles of object oriented programming, regular 
+                    expressions and event-driven GUI programming through Python.
+                </li>
+                <li>
+                    <span class='bold'>Data Structures and Algorithms I:</span> Assisted students with understaning and implementing 
+                    data structures such as linked lists, stacks, binary trees, heaps and priority queues
+                    and maps.
+                </li>
+            </ul>
+        </SingleExperience>
+
+        <h2>Education</h2>
+        <SingleExperience role={ucc_education} company={ucc} company_logo={ucc_logo}
+            total_time={ucc_dates} skills={ibm_role_1_skills}>
+            <ul>
+                <li>Bullet point 1</li>
+                <li>Bullet point 2</li>
+                <li>Bullet point 3</li>
+            </ul>
+        </SingleExperience>
+        <h2>Certifications</h2>
+        <Certifications>
+            <Certificate name='SQL Secrets' logo={ucc_logo} issuer="UCC" date={ucc_dates} />
+        </Certifications>
+    </main>
+</Layout>
+
+<style>
+main {
+    margin: auto;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+</style>
