@@ -18,8 +18,9 @@ const {
 
 <style>
 .skill {
-    positiion: relative;
-    display: inline-block;
+    position: relative;
+    display: inline;
+    width: auto;
     font-size: 0.875rem;
     margin-right: 1rem;
     padding: 0.2rem 0.45rem;
@@ -30,18 +31,17 @@ const {
     cursor: default;
 }
 
-.skill .tooltip-text {
+.tooltip-text {
     visibility: hidden;
-    z-index: 1;
-    text-align: center;
     position: absolute;
-    margin-left: -8rem;
+    text-align: center;
+    margin-left: calc(-5.5rem - 50%);
     margin-top: 2rem;
     padding: 0.2rem 0.45rem;
     
     background-color: #00897b;
     color: snow;
-    width: 14rem;
+    width: 12rem;
     border-radius: 0.5rem;
 }
 
@@ -51,7 +51,6 @@ const {
 
 .tooltip-text::before {
     content: "";
-    z-index: 1;
     position: absolute;
 
     border-bottom: 0.4rem solid #00897bee; 
