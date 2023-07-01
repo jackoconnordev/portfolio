@@ -2,7 +2,7 @@
 import Menu from './Menu.astro';
 ---
 <header>
-    <div class='container'>
+    <div class='header-container'>
         <div class='header-item'>
            <a id='title' href='/'>Jack O'Connor</a>
         </div> 
@@ -18,13 +18,14 @@ import Menu from './Menu.astro';
         z-index: 1;
 
         background-color: #323232;
-        border-bottom: 5px solid;
-        border-bottom-color: #00897b; 
+        border-bottom: 5px solid #00897b;
     }
 
-    .container {
+    .header-container {
         display: flex;
+        margin-inline: auto;
         align-items: baseline;
+        max-width: 1000px;
     }
 
     .header-item {

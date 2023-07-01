@@ -11,7 +11,7 @@ import type {skill} from '../components/Skill.astro'
 // IBM text
 import ibm_logo from '../images/ibm-logo.webp'
 const ibm = 'IBM'
-const ibm_dates = '2019-2021'
+const ibm_dates = 'March 2021 - Present'
 
 const ibm_role_1 = 'Software Developer (Internship)'
 const ibm_role_1_dates = 'March 2022 - August 2022'
@@ -19,25 +19,31 @@ const ibm_role_1_skills:skill[] = [['Cypress', 'Frontend end-to-end testing libr
                                    ['React', 'Front-end UI framework based on component driven development.']]
 
 const ibm_role_2 = 'Graduate Software Engineer'
-const ibm_role_2_dates = '2020 - 2021'
+const ibm_role_2_dates = 'July 2023 - Present'
 const ibm_role_2_skills:skill[] = [['Skill 1', 'Skill 2']]
 
 // UCC text
 import ucc_logo from '../images/ucc-logo.svg'
+const ucc = 'University College Cork'
+
 const ucc_role_1 = 'Laboratory Demonstrator'
 const ucc_role_1_dates = 'September 2021 - April 2023'
-const ucc_role_1_skills:skill[] = [['Python', 'Scripting language'],
+const ucc_role_1_skills:skill[] = [['Python', 'High-level general purpose programming language.'],
                                    ['Data Structures', 'Linked lists, binary search trees, heaps, etc.']]
 
 const ucc_education = 'BSc (Hons) Data Science and Analytics'
-const ucc = 'University College Cork'
 const ucc_dates = '2019-2023'
+const ucc_education_skills:skill[] = [['Python', 'High-level general purpose programming language.'],
+                                      ['R/RStudio', 'Programming language and environment for statistical computing and graphics.'],
+                                      ['Probability and Statistics', 'Emphasis on regression analysis, parameter estimation and hypothesis testing.']]
 ---
 
 <Layout title={'Résumé'} description={'Placeholder text'}>
     <main class='container'>    
         <h1>Résumé</h1>
+
         <h2>Experience</h2>
+
         <MultiExperience company={ibm} company_logo={ibm_logo} total_time={ibm_dates}>
             <ExperienceEntry role={ibm_role_2} total_time={ibm_role_2_dates} skills={ibm_role_2_skills}
                 entry_number={1}>
@@ -90,11 +96,23 @@ const ucc_dates = '2019-2023'
 
         <h2>Education</h2>
         <SingleExperience role={ucc_education} company={ucc} company_logo={ucc_logo}
-            total_time={ucc_dates} skills={ibm_role_1_skills}>
+            total_time={ucc_dates} skills={ucc_education_skills}>
             <ul>
-                <li>Bullet point 1</li>
-                <li>Bullet point 2</li>
-                <li>Bullet point 3</li>
+                <li>
+                    <span class='bold'>Grade:</span> First Class Honours.
+                </li>
+                <li>
+                    <span class='bold'>Thesis title:</span> "Intrinsic Quantification of Domain-Shift
+                    Magnitude in Reinforcement Learning".
+                </li>
+                <li>
+                    Provided an education in data storage, manipulation and interpretation using mathematical 
+                    sciences and computational methods for solving complex real-world problems.
+                </li>
+                <li>
+                    Final year focus on visualising and solving high-dimensional problems using multivariate 
+                    data analysis, constraint programming and machine learning.
+                </li>
             </ul>
         </SingleExperience>
         <h2>Certifications</h2>
@@ -107,10 +125,10 @@ const ucc_dates = '2019-2023'
 <style>
 main {
     margin: auto;
-    max-width: 800px;
 }
 
 h1 {
+    margin-block: 3rem;
     text-align: center;
 }
 

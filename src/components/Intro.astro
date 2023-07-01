@@ -2,44 +2,37 @@
 import github_mark from '../images/github-mark.svg'
 import linkedin_mark from '../images/linkedin-mark.svg'
 ---
-<div class='landing-height'>
-    <section id='intro'>
-        <p>Hi there,</p> 
-        <h1>I'm Jack</h1>
-        <p class='headline'>Software Engineer, BSc Data Science and Analytics</p>
-        <div class='logo-container'>
-            <a class='image-link' href='https://github.com/jackoconnordev'>
-                <img src={github_mark} class='mark' />
-            </a>
-            <a class='image-link' href='https://ie.linkedin.com/in/jackaoconnor'>
-                <img src={linkedin_mark} class='mark' />
-            </a>
-        </div>
-        <div id='resume-button-bg'>
-            <a id='resume-button' class='medium-text' href='/resume'>
-                {'Résumé'}
-            </a>
-        </div>
-    </section>
-</div>
+<section>
+    <p>Hi there,</p> 
+    <h1>I'm Jack</h1>
+    <p class='headline'>Software Engineer, BSc Data Science and Analytics</p>
+    <div class='logo-container'>
+        <a class='image-link' href='https://github.com/jackoconnordev'>
+            <img src={github_mark} class='mark' />
+        </a>
+        <a class='image-link' href='https://ie.linkedin.com/in/jackaoconnor'>
+            <img src={linkedin_mark} class='mark' />
+        </a>
+    </div>
+    <div id='resume-button-bg'>
+        <a id='resume-button' class='medium-text' href='/resume'>
+            {'Résumé'}
+        </a>
+    </div>
+</section>
 
 <style>
-    .landing-height {
-        height: calc(100svh - 3.2rem - 6px); 
-    }
-
-    #intro {
+    section {
+        height: calc(100svh - 3.2rem - 5px); 
         display: flex;
         flex-direction: column;
         justify-content: center;
-         
-        height: 100%;
         text-align: center;
     }
 
     h1 {
         font-size: 2.4rem;
-        margin: 0.6rem 0;
+        margin-block: 0.6rem;
     }
 
     .headline {
