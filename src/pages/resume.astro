@@ -20,7 +20,8 @@ const ibm_role_1_skills:skill[] = [['Cypress', 'Frontend end-to-end testing libr
 
 const ibm_role_2 = 'Graduate Software Engineer'
 const ibm_role_2_dates = 'July 2023 - Present'
-const ibm_role_2_skills:skill[] = [['Skill 1', 'Skill 2']]
+const ibm_role_2_skills:skill[] = [['TypeScript', 'A strongly typed programming language built on JavaScript'],
+                                   ['Next.js', 'Framework for server-side rendered or statically generated web applications']]
 
 // UCC text
 import ucc_logo from '../images/ucc-logo.svg'
@@ -48,9 +49,28 @@ const ucc_education_skills:skill[] = [['Python', 'High-level general purpose pro
             <ExperienceEntry role={ibm_role_2} total_time={ibm_role_2_dates} skills={ibm_role_2_skills}
                 entry_number={1}>
                 <ul>
-                    <li>Bullet point 1</li>
-                    <li>Bullet point 2</li>
-                    <li>Bullet point 3</li>
+                    <li>
+                        Migrated UI component library Carbon to latest major version, without breaking support for legacy packages.
+                        Brought the application UI capabilities back to feature-parity with design-team redlines
+                        while solving recurring security vulnerability issues.
+                    </li>
+                    <li>
+                        Ensured shared development environment was always available for testing, with all teams' latest code, through 
+                        the use of Jenkins automation for deploys and OpenShift cli for direct debugging of cluster issues.
+                    </li>
+                    <li>
+                        Reliably closed out work items within the assigned sprint. Entrusted with solving surprise 
+                        high-priority defects on production branches that could delay product release if not solved quickly 
+                        and correctly.
+                    </li>
+                    <li>
+                        Integrated architect-developed translation system into existing applications bringing build times down
+                        by over 10 minutes in one instance.
+                    </li>
+                    <li>
+                        Increased long-term maintainability of codebase by contributing documentation, fixing linting and
+                        refactoring complex components.
+                    </li>
                 </ul>
             </ExperienceEntry>
             <ExperienceEntry role={ibm_role_1} total_time={ibm_role_1_dates} skills={ibm_role_1_skills}
@@ -110,7 +130,7 @@ const ucc_education_skills:skill[] = [['Python', 'High-level general purpose pro
                     sciences and computational methods for solving complex real-world problems.
                 </li>
                 <li>
-                    Final year focus on visualising and solving high-dimensional problems using multivariate 
+                    Final year focus on visualisation and solving of high-dimensional problems using multivariate 
                     data analysis, constraint programming and machine learning.
                 </li>
             </ul>
@@ -137,7 +157,6 @@ ul {
 }
 
 li {
-    list-style-type: none;
     margin-bottom: 1rem;
 }
 </style>
