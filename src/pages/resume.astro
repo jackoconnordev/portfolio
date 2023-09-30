@@ -6,7 +6,7 @@ import ExperienceEntry from '../components/resume/ExperienceEntry.astro'
 import Certifications from '../components/resume/Certifications.astro'
 import Certificate from '../components/resume/Certificate.astro'
 
-import type {skill} from '../components/Skill.astro'
+import type { Skill } from '../components/Skill.astro'
 
 // IBM text
 import ibm_logo from '../images/ibm-logo.webp'
@@ -15,12 +15,12 @@ const ibm_dates = 'March 2021 - Present'
 
 const ibm_role_1 = 'Software Developer (Internship)'
 const ibm_role_1_dates = 'March 2022 - August 2022'
-const ibm_role_1_skills:skill[] = [['Cypress', 'Frontend end-to-end testing library.'],
+const ibm_role_1_skills:Skill[] = [['Cypress', 'Frontend end-to-end testing library.'],
                                    ['React', 'Front-end UI framework based on component driven development.']]
 
 const ibm_role_2 = 'Graduate Software Engineer'
 const ibm_role_2_dates = 'July 2023 - Present'
-const ibm_role_2_skills:skill[] = [['TypeScript', 'A strongly typed programming language built on JavaScript'],
+const ibm_role_2_skills:Skill[] = [['TypeScript', 'A strongly typed programming language built on JavaScript'],
                                    ['Next.js', 'Framework for server-side rendered or statically generated web applications']]
 
 // UCC text
@@ -29,12 +29,12 @@ const ucc = 'University College Cork'
 
 const ucc_role_1 = 'Laboratory Demonstrator'
 const ucc_role_1_dates = 'September 2021 - April 2023'
-const ucc_role_1_skills:skill[] = [['Python', 'High-level general purpose programming language.'],
+const ucc_role_1_skills:Skill[] = [['Python', 'High-level general purpose programming language.'],
                                    ['Data Structures', 'Linked lists, binary search trees, heaps, etc.']]
 
 const ucc_education = 'BSc (Hons) Data Science and Analytics'
 const ucc_dates = '2019-2023'
-const ucc_education_skills:skill[] = [['Python', 'High-level general purpose programming language.'],
+const ucc_education_skills:Skill[] = [['Python', 'High-level general purpose programming language.'],
                                       ['R/RStudio', 'Programming language and environment for statistical computing and graphics.'],
                                       ['Probability and Statistics', 'Emphasis on regression analysis, parameter estimation and hypothesis testing.']]
 ---
