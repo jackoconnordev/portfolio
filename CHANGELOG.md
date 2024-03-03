@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/jackoconnordev/portfolio/compare/v0.0.3...v0.0.4) (2024-03-03)
+
+
+### Bug Fixes
+
+* **menu:** items were flush with right side of screen ([5a7e4a9](https://github.com/jackoconnordev/portfolio/commit/5a7e4a998828f259499f8aa8fc804fc0a36b27e9))
+
 ### [0.0.3](https://github.com/jackoconnordev/portfolio/compare/v0.0.2...v0.0.3) (2024-03-03)
 
 
