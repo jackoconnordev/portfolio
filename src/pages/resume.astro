@@ -11,7 +11,7 @@ import type { Skill } from '../components/Skill.astro'
 // IBM text
 import ibm_logo from '../images/ibm-logo.webp?url'
 const ibm = 'IBM'
-const ibm_dates = 'March 2021 - Present'
+const ibm_dates = 'March 2022 - February 2024'
 
 const ibm_role_1 = 'Software Developer (Internship)'
 const ibm_role_1_dates = 'March 2022 - August 2022'
@@ -19,10 +19,20 @@ const ibm_role_1_skills:Skill[] = [['Cypress', 'Frontend end-to-end testing libr
                                    ['React', 'Front-end UI framework based on component driven development.']]
 
 const ibm_role_2 = 'Graduate Software Engineer'
-const ibm_role_2_dates = 'July 2023 - Present'
+const ibm_role_2_dates = 'July 2023 - February 2024'
 const ibm_role_2_skills:Skill[] = [['TypeScript', 'A strongly typed programming language built on JavaScript'],
+                                   ['OpenShift', 'RedHat\'s official Kubernetes distribution for container management'],
                                    ['Next.js', 'Framework for server-side rendered or statically generated web applications']]
 
+// Keelvar text
+import keelvar_logo from '../images/keelvar-logo.png?url'
+const keelvar = 'Keelvar'
+
+const keelvar_role_1 = 'Software Engineer I'
+const keelvar_role_1_dates = 'February 2024 - Present'
+const keelvar_role_1_skills:Skill[] = [['Python', 'High-level general purpose programming language.'],
+                                       ['Django', 'Batteries-included framework for the development of fully featuerd web applications'],
+                                       ['Docker', 'For building containerised, microservice applications (deploying to AWS ECS)']]
 // UCC text
 import ucc_logo from '../images/ucc-logo.svg?url'
 const ucc = 'University College Cork'
@@ -44,6 +54,20 @@ const ucc_education_skills:Skill[] = [['Python', 'High-level general purpose pro
         <h1>Résumé</h1>
 
         <h2>Experience</h2>
+
+        <SingleExperience role={keelvar_role_1} company={keelvar} company_logo={keelvar_logo}
+            total_time={keelvar_role_1_dates} skills={keelvar_role_1_skills}>
+            Keelvar is the best-of-breed software for procurement specialists seeking to optimise their strategic, tactical and tail spend. It does this through a fluent user interface
+            for the organisation of large-scale e-auctions, along with an industry-leading approach to the automation of sourcing events of all sizes using Keelvar's Autonomous Sourcing bot builder.
+            <ul>
+                <li>
+                    Developed APIs for the intake and exportation of Keelvar stratagic sourcing events. API runtime metrics were logged to Grafana dashboards for easy SRE monitoring.
+                </li>
+                <li>
+                    With more to come...
+                </li>
+            </ul>
+        </SingleExperience>
 
         <MultiExperience company={ibm} company_logo={ibm_logo} total_time={ibm_dates}>
             <ExperienceEntry role={ibm_role_2} total_time={ibm_role_2_dates} skills={ibm_role_2_skills}
