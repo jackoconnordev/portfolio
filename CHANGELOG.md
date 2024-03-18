@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/jackoconnordev/portfolio/compare/v0.0.6...v0.0.7) (2024-03-18)
+
+
+### Features
+
+* **feature-card:** begin blog feature card component ([bdd5e54](https://github.com/jackoconnordev/portfolio/commit/bdd5e545f1c4206135a42439dc30c7537c514626))
+
+
+### Bug Fixes
+
+* **blog:** add contianer class to comment section ([0eb4762](https://github.com/jackoconnordev/portfolio/commit/0eb4762e11e49ac4e0b32edda04955d3d8271844))
+
 ### [0.0.6](https://github.com/jackoconnordev/portfolio/compare/v0.0.5...v0.0.6) (2024-03-18)
 
 
