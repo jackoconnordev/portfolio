@@ -1,0 +1,44 @@
+---
+const { title, description, image } = Astro.props;
+---
+
+<li>
+  <a href="#" class="feature-card">
+    <div class="title-container">
+      <h2>Title</h2>
+    </div>
+    <p>
+      Description Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Deleniti ipsam ullam amet perferendis vel. Modi tenetur sapiente, fugiat
+      minus fugit odit ea qui quos nisi perspiciatis dolorum incidunt itaque at.
+    </p>
+  </a>
+</li>
+
+<style>
+  a {
+    text-decoration: unset;
+    color: black;
+  }
+
+  li {
+    all: unset;
+  }
+
+  .feature-card {
+    display: block;
+    padding: 1rem;
+    margin-top: 3rem;
+    border: 4px solid #323232;
+    border-radius: 1rem;
+  }
+
+  .feature-card:hover {
+    box-shadow: 0 0 1rem #00897b;
+    border: 6px solid #323232;
+  }
+
+  .title-container {
+    min-height: 80px;
+  }
+</style>
