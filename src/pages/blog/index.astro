@@ -1,6 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro"; // TODO: configure imports
 import FeatureCard from "../../components/blog/FeatureCard.astro";
+
+const lorem =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur harum repudiandae nostrum minima placeat dolorem, explicabo, recusandae perferendis similique culpa ad amet? Nihil quidem ipsa ab voluptatem? Esse, autem. Blanditiis.";
 ---
 
 <Layout title={"Jack's Blog"} description={"Placeholder text"}>
@@ -8,7 +11,8 @@ import FeatureCard from "../../components/blog/FeatureCard.astro";
     <h1>Blog</h1>
     <hr />
 
-    <FeatureCard />
+    <FeatureCard title={"Title One"} description={lorem} />
+    <FeatureCard title={"Blog Post Two"} description={lorem} />
   </main>
 </Layout>
 
