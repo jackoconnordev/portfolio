@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/jackoconnordev/portfolio/compare/v0.0.5...v0.0.6) (2024-03-18)
+
+
+### Features
+
+* **blog:** add blog index page ([9dab71b](https://github.com/jackoconnordev/portfolio/commit/9dab71b8ab8199355cba3a1eded355cf3eb51572))
+
 ### [0.0.5](https://github.com/jackoconnordev/portfolio/compare/v0.0.4...v0.0.5) (2024-03-18)
 
 ### [0.0.4](https://github.com/jackoconnordev/portfolio/compare/v0.0.3...v0.0.4) (2024-03-03)
