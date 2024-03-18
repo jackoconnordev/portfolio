@@ -1,0 +1,17 @@
+---
+import Layout from "./Layout.astro";
+import CommentSection from "../components/blog/CommentSection.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <main class=".container">
+    <article>
+      <slot />
+    </article>
+  </main>
+  <section>
+    <CommentSection />
+  </section>
+</Layout>
