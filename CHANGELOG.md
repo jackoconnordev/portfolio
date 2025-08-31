@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/jackoconnordev/portfolio/compare/v0.0.7...v0.0.8) (2025-08-31)
+
+
+### Features
+
+* **feature-card:** add title and description props ([e1db3bf](https://github.com/jackoconnordev/portfolio/commit/e1db3bf08d6a160207a1cc5a6836c691c5ec0c9b))
+
 ### [0.0.7](https://github.com/jackoconnordev/portfolio/compare/v0.0.6...v0.0.7) (2024-03-18)
 
 
