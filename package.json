@@ -11,7 +11,7 @@
     "release": "standard-version"
   },
   "dependencies": {
-    "astro": "^3.2.0"
+    "astro": "^5.13.0"
   },
   "husky": {
     "hooks": {
@@ -30,6 +30,6 @@
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "standard-version": "^9.5.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.9.2"
   }
 }
