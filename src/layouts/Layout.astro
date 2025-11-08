@@ -73,6 +73,8 @@ const { title, description, image, pagefindIgnore, article } = Astro.props;
 			</LayoutGrid>
 			<slot name="404" />
 		</main>
-		<!-- <Background /> -->
+
+	<!-- Track visits anonymously using SimpleAnalytics -->
+	<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 	</body>
 </html>
