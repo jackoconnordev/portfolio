@@ -1,24 +1,43 @@
 <script is:inline>
-	let colors = ["#24d05a", "#eb4888", "#10a2f5", "#e9bc3f"];
+	const colors = [
+		"#00BB00", // don't access
+		"#fffff0", // ivory
+		"#E7F2FC", // ao
+		"#d2b48c", // tan
+		"#1565C0", // blue
+		"#795548", // brown
+		"#7B1FA2", // purple
+		"#50c878", // emerald
+		"#c19a6b", // skewbald
+		"#ff69b4", // carnation
+		"#ff3800", // coquelicot
+	];
+	const randomNumber = Math.floor(Math.random() * colors.length);
+	arrayRotate(colors, randomNumber);
 
-	function getRandomColor() {
-		return colors[Math.floor(Math.random() * colors.length)];
+	function arrayRotate(arr, count) {
+		const len = arr.length;
+		arr.push(...arr.splice(0, ((-count % len) + len) % len));
+		return arr;
 	}
 
-	function setRandomLinkColor() {
+	function clamp(num, min, max) {
+		return Math.min(Math.max(num, min), max);
+	}
+
+	function getColor(idx) {
+		return colors[clamp(idx, 1, 10)];
+	}
+
+	function setLinkColor() {
 		Array.from(document.getElementsByTagName("a")).forEach((e) => {
-			e.style.textDecorationColor = getRandomColor();
-		});
-	}
-
-	function setColorHoverListener() {
-		Array.from(document.querySelectorAll("a, button")).forEach((e) => {
-			e.addEventListener("mouseover", setRandomLinkColor);
+			const vowels = e.innerText.match(/[aeiou]/gi);
+			const numVowels = vowels ? vowels.length : 0;
+			e.style.textDecorationColor = getColor(numVowels);
 		});
 	}
 
 	(function () {
-		setRandomLinkColor();
-		setColorHoverListener();
+		setLinkColor();
 	})();
 </script>
